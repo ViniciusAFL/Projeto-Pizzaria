@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cargo;
+
 use Illuminate\Http\Request;
+use App\Models\{Cargo,
+                User
+};
+use Ramsey\Uuid\Type\Integer;
 
 class CargoController extends Controller
 {
@@ -12,7 +16,8 @@ class CargoController extends Controller
      */
     public function index()
     {
-        //
+        $cargos = Cargo::orderBy('cargo');
+        return view('cargo.index')->with(compact('cargos'));
     }
 
     /**
@@ -20,7 +25,8 @@ class CargoController extends Controller
      */
     public function create()
     {
-        //
+        $cargo = null;
+        return view('cargo.form')->with(compact('cargo'));
     }
 
     /**
@@ -28,38 +34,45 @@ class CargoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cargo = Cargo::created($request->all());
+        return redirect()->route('cargo.index')
+        ->with('success','Cadastrado com sucesso!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Cargo $cargo)
+    public function show(int $id)
     {
-        //
+        $cargo = Cargo::find($id);
+        return view('cargo.show')->with(compact('cargo'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cargo $cargo)
+    public function edit(int $id)
     {
-        //
+        $cargo = Cargo::find($id);
+        return view('cargo.form')->with(compact('cargos'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cargo $cargo)
+    public function update(Request $request, int $id)
     {
-        //
+        $cargo = Cargo::find($id);
+        $cargo->update($request->all());
+        return redirect()->route('cargo.index')->with('sucess','Atualizado com sucesso!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cargo $cargo)
+    public function destroy(int $id)
     {
-        //
+        Cargo::find($id)->delete();
+        return redirect()->back()->with('destroy', 'Excluído com sucesso!');
     }
 }

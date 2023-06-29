@@ -16,7 +16,8 @@ class CargoController extends Controller
      */
     public function index()
     {
-        $cargos = Cargo::orderBy('cargo');
+
+        $cargos = Cargo::orderBy('cargo')->get();
         return view('cargo.index')->with(compact('cargos'));
     }
 
@@ -54,7 +55,7 @@ class CargoController extends Controller
     public function edit(int $id)
     {
         $cargo = Cargo::find($id);
-        return view('cargo.form')->with(compact('cargos'));
+        return view('cargo.form')->with(compact('cargo'));
     }
 
     /**

@@ -17,9 +17,9 @@
 
         <tr>
             <td>
-                <a href="{{ route('cargo.edit', ['id'=>$cargo->id_cargo]) }}">Editar</a>
-                <a href="{{ route('cargo.show', ['id'=>$cargo->id_cargo]) }}">Ver</a>
-                <a href="{{ route('cargo.destroy', ['id'=>$cargo->id_cargo]) }}">Excluir</a>
+                <a class="btn btn-warning" href="{{ route('cargo.edit', ['id'=>$cargo->id_cargo]) }}">Editar</a>
+                <a class="btn btn-success" href="{{ route('cargo.show', ['id'=>$cargo->id_cargo]) }}">Ver</a>
+                <a class="btn btn-danger" href="{{ route('cargo.destroy', ['id'=>$cargo->id_cargo]) }}">Excluir</a>
 
             </td>
 

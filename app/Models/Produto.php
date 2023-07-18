@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\{
-    TipoProduto
+    TipoProduto,
+    ProdutoTamanho
 };
 
 class Produto extends Model
@@ -18,7 +19,7 @@ class Produto extends Model
     protected $primaryKey = 'id_produto';
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $fillabe = [
+    protected $fillable = [
         'id_tipo_produto',
         'nome',
         'descricao',
@@ -38,4 +39,11 @@ class Produto extends Model
                                 'id_tipo_produto');
     }
 
+    public function tamanhos(): object
+    {
+        return $this->belongsTo(ProdutoTamanho::class,
+        'id_produto',
+        'id_produto');
+
+    }
 }

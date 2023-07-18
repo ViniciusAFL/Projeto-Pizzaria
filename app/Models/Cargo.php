@@ -17,7 +17,7 @@ class Cargo extends Model
     protected $primaryKey = 'id_cargo';
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $fillabe = [
+    protected $fillable = [
         'cargo'
 
     ];

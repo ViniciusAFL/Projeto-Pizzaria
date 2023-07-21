@@ -3,7 +3,7 @@
 @section('content')
 
 <h1>Produtos</h1>
-<table>
+<table class="table table-light">
     <thead>
         <tr>
             <th>Ações</th>

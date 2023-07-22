@@ -12,7 +12,7 @@ class TipoProduto extends Model
     protected $table  = 'tipos_produtos';
     protected $primaryKey = 'id_tipo_produto';
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-    protected $fillabe = [
+    protected $fillable = [
         'tipo_produto'
 
     ];

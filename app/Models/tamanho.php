@@ -13,7 +13,7 @@ class Tamanho extends Model
     protected $primaryKey = 'id_tamanho';
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
     // campos que podem ser visualizados/ manipulados fora da classe
-    protected $fillabe = [
+    protected $fillable = [
         'tamanhos'
 
     ];

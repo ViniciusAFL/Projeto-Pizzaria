@@ -15,12 +15,13 @@
             <div class="col-md-3">
                 <label class="form-label" for="id_tamanho">Tamanho*</label>
                 <select class="form-select" name="id_tamanho" id="id_tamanho" required>
+
                     @foreach ($tamanhos::orderBy('tamanho')->get() as $item)
                         <option value="{{ $item->id_tamanho }}" @selected($produtoTamanho && $produtoTamanho->id_tamanho == $item->id_tamanho ? true : false)>
-
                             {{ $item->tamanho }}
                         </option>
                     @endforeach
+
                 </select>
             </div>
 

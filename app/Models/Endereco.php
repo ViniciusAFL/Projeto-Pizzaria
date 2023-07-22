@@ -14,7 +14,7 @@ class Endereco extends Model
     protected $primaryKey = 'id_endereco';
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $fillabe = [
+    protected $fillable = [
         'endereco',
         'numero',
         'complemento',

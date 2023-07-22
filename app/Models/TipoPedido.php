@@ -13,7 +13,7 @@ class TipoPedido extends Model
     protected $primaryKey = 'id_tipo_pedido';
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
     // campos que podem ser visualizados/ manipulados fora da classe
-    protected $fillabe = [
+    protected $fillable = [
         'tipo_pedido'
 
     ];

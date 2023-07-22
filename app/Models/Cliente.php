@@ -14,7 +14,7 @@ class Cliente extends Model
     protected $primaryKey = 'id_cliente';
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $fillabe = [
+    protected $fillable = [
         'nome',
         'ddd',
         'celular',

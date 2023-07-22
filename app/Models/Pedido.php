@@ -23,7 +23,7 @@ class Pedido extends Model
     protected $primaryKey = 'id_pedido';
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $fillabe = [
+    protected $fillable = [
         'id_tipo_pedido',
         'id_user',
         'id_cliente',

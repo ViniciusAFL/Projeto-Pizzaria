@@ -13,7 +13,7 @@ class Status extends Model
     protected $primaryKey = 'id_status';
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $fillabe = [
+    protected $fillable = [
         'status'
 
     ];
